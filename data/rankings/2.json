@@ -1,0 +1,171 @@
+{
+    "6x6": {
+        "ranking": [
+            {
+                "nick": "Not Jorge",
+                "games": 10,
+                "victories": 10
+            },
+            {
+                "nick": "Surely Maria",
+                "games": 8,
+                "victories": 7
+            },
+            {
+                "nick": "Absolutely Pedro",
+                "games": 12,
+                "victories": 9
+            },
+            {
+                "nick": "Ana 2",
+                "games": 9,
+                "victories": 6
+            },
+            {
+                "nick": "Carlos",
+                "games": 11,
+                "victories": 10
+            },
+            {
+                "nick": "Laura",
+                "games": 7,
+                "victories": 5
+            },
+            {
+                "nick": "Miguel",
+                "games": 10,
+                "victories": 8
+            },
+            {
+                "nick": "Sofia",
+                "games": 9,
+                "victories": 7
+            },
+            {
+                "nick": "Ricardo",
+                "games": 8,
+                "victories": 6
+            },
+            {
+                "nick": "Isabel",
+                "games": 11,
+                "victories": 9
+            },
+            {
+                "nick": "Luis",
+                "games": 7,
+                "victories": 5
+            },
+            {
+                "nick": "Marta",
+                "games": 10,
+                "victories": 8
+            },
+            {
+                "nick": "Antonio",
+                "games": 9,
+                "victories": 7
+            },
+            {
+                "nick": "Beatriz",
+                "games": 8,
+                "victories": 6
+            },
+            {
+                "nick": "Hugo",
+                "games": 11,
+                "victories": 9
+            },
+            {
+                "nick": "Carolina",
+                "games": 7,
+                "victories": 5
+            }
+        ]
+    },
+
+    "5x6": {
+        "ranking": [
+            {
+                "nick": "Jorge",
+                "games": 10,
+                "victories": 10
+            },
+            {
+                "nick": "Maria",
+                "games": 8,
+                "victories": 7
+            },
+            {
+                "nick": "Pedro",
+                "games": 12,
+                "victories": 9
+            },
+            {
+                "nick": "Ana",
+                "games": 9,
+                "victories": 6
+            },
+            {
+                "nick": "Carlos",
+                "games": 11,
+                "victories": 10
+            },
+            {
+                "nick": "Laura",
+                "games": 7,
+                "victories": 5
+            },
+            {
+                "nick": "Miguel",
+                "games": 10,
+                "victories": 8
+            },
+            {
+                "nick": "Sofia",
+                "games": 9,
+                "victories": 7
+            },
+            {
+                "nick": "Ricardo",
+                "games": 8,
+                "victories": 6
+            },
+            {
+                "nick": "Isabel",
+                "games": 11,
+                "victories": 9
+            },
+            {
+                "nick": "Luis",
+                "games": 7,
+                "victories": 5
+            },
+            {
+                "nick": "Marta",
+                "games": 10,
+                "victories": 8
+            },
+            {
+                "nick": "Antonio",
+                "games": 9,
+                "victories": 7
+            },
+            {
+                "nick": "Beatriz",
+                "games": 8,
+                "victories": 6
+            },
+            {
+                "nick": "Hugo",
+                "games": 11,
+                "victories": 9
+            },
+            {
+                "nick": "Carolina",
+                "games": 7,
+                "victories": 5
+            }
+        ]
+    }
+}

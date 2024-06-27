@@ -1,0 +1,452 @@
+header{
+  background-color: rgb(117, 19, 51);
+  color: white;
+  width: 100%;
+  padding: 5px;
+
+  border-style: double;
+  border-radius: 8px;
+
+  align-items: center;
+  display: flex;
+}
+
+div.header-logotipo{
+  width: 10%;
+
+}
+
+div.header-text{
+  width: 70%;
+  padding-left: 7%;
+  text-align: center;
+  font-size: 150%;
+}
+
+div.header-login{
+  width: 20%;
+  align-items: top;
+  font-size: 120%;
+}
+
+body{
+  background-color: rgb(236, 183, 205);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario{
+  font-size: 150%;
+  color:rgb(117, 19, 51);
+  line-height: 1.8;
+}
+
+input{
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 70%;
+}
+
+select {
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 70%;
+}
+
+div.mae{
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+div.comandos{
+  text-align: right;
+  width: 60%;
+  z-index:0;
+  width: 50%;
+
+  font-size: 150%;
+  color:rgb(117, 19, 51);
+  line-height: 1.8;
+  padding: 4%;
+}
+
+div.tabuleiro{
+  width: 50%;
+  display: block;
+}
+
+/*.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}*/
+
+/* caracteristicas do pop up */
+/*.popup .popuptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #8a606f;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  left: -80px;
+  bottom: 40px;
+}*/
+
+/* aparecer e desaparecer */
+/*.popup .show {
+  visibility: visible;
+}*/
+
+#contracomputadorDiv{
+  display: none;
+}
+
+#formgrande{
+  display: block; /* mas o objetivo e depois de ser usado ficar none */
+}
+
+.painel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: rgb(236, 183, 205);
+  border: 8px solid rgb(117, 19, 51);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  border-style: double;
+  border-width: thick;
+  border-radius:5px;
+  font-size: 20px;
+  text-align: left;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.tituloregras { 
+  background-color: rgb(117, 19, 51);
+  color: rgb(236, 183, 205);
+  font-size: 100%; 
+  text-align: center;
+  top: 10%;
+}
+
+.fecharPainel {
+  position: fixed;
+  background-color: #c69191;
+  color: rgb(117, 19, 51);
+  size: 50%;
+  right:0;
+  top:0;
+}
+
+.mostrarinstrucoes {
+  background-color:rgb(236, 183, 205);
+  color: rgb(117, 19, 51);
+  border:none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  line-height: 2.8;
+  cursor: pointer;
+  
+}
+
+.grid {
+  width: 50%;
+  height: 75%;
+  margin: 0 auto;
+  border: 1px solid black;
+  color: black;
+}
+
+#board {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+row-gap: 0px;
+column-gap: 0px;
+width: 100% block;
+}
+
+.tile {
+border: 1px solid rgb(117, 19, 51);
+float: left;
+margin: 0 4px 4px 0;
+box-shadow: 3px 3px 3px 3px rgb(117, 19, 51);
+}
+
+.tile {
+height: 70px;
+width: 77px;
+margin: 5px;
+cursor: pointer;
+}
+
+.pink-piece {
+background-image: url(p1.png);
+border-color: rgb(117, 19, 51);
+background-size: contain;  
+}
+
+.white-piece {
+background-image: url(p2.png);
+border-color: rgb(117, 19, 51);
+background-size: contain;
+}
+
+.pink-selected {
+background-image: url(p1.png);
+background-size: contain;
+border-color: whitesmoke;
+box-shadow: 0 15px 15px rgb(200, 34, 90);
+}
+
+.white-selected {
+background-image: url(p2.png);
+background-size: contain;
+box-shadow: 0 15px 15px rgb(200, 34, 90);
+border-color: rgb(117, 19, 51);
+}
+
+.rosas{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 50%;
+}
+
+.brancas{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 50%;
+}
+
+.sitiodaspecas{
+  width: 40%;
+}
+
+.altaflex{
+  display: flex;
+  width: 100%;
+}
+
+.comecarjogo{
+  background-color:rgb(236, 183, 205);
+  color: rgb(117, 19, 51);
+  border:none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  line-height: 2.6;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.desistirjogo{
+  background-color: rgb(236, 183, 205);
+  color: rgb(117, 19, 51);
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  line-height: 2.4;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+
+h3{
+  color: rgb(117, 19, 51);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+#estatisticas {
+  display: none;
+}
+
+.estatisticas2{
+  display: flex;
+  position: fixed;
+  top:30%;
+  left: 20%;
+  width: 60%;
+  height: 60%; 
+  z-index: 9999;
+  background-color: rgb(117, 19, 51); 
+  border: 1px solid rgb(236, 183, 205); 
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  border-style: double;
+  border-width: thick;
+  border-radius:5px;
+}
+
+.jogarnovamente {
+  background-color: rgb(255, 255, 255);
+  color: rgb(117, 19, 51);
+  size: 100%;
+  top: 75%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
+  object-position: center;
+  border-color: rgb(255, 255, 255);
+  border-style: double;
+  cursor: pointer;
+  box-shadow: 0 2px 2px #000000;
+}
+
+.tituloestatisticas{
+  background-color: rgb(117, 19, 51);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px 8px rgb(215, 151, 183);
+  font-size:40px; 
+  font-family: fantasy 'Times New Roman', Times, serif;
+  text-align: center;
+  top: 10%;
+}
+
+.imagemesq{
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  filter: drop-shadow(3px 5px 2px rgba(0 0 0/ 0.6));
+  justify-content: center;
+}
+
+.imagemdir{
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  filter: drop-shadow(3px 5px 2px rgba(0 0 0/ 0.6));
+  justify-content: center;
+}
+
+.textoestatisticas{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  text-align: center;
+  width: 50%;
+}
+
+.trofeu{
+  width: 90%;
+  justify-content: center;
+}
+
+.vencedor{
+  color:rgb(117, 19, 51);
+  background-color: rgb(236, 183, 205);
+}
+
+.blocos{
+  display: grid;
+  width: 100%;
+}
+
+.gameover{
+  color: rgb(117, 19, 51);
+  text-shadow: 0 10px 20px #fff, 0 -2px 5px #fff;
+  text-align: center;
+  font-size: 50 px;
+  font-family:'Gill Sans';
+}
+
+.popuptext{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: rgb(236, 183, 205);
+  border: 8px solid rgb(117, 19, 51);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  border-style: double;
+  border-width: thick;
+  border-radius:5px;
+  font-size: 20px;
+  text-align: left;
+  max-height: 350px;
+  overflow-y: auto;
+  width: 30%;
+}
+
+.fecharClassificacoes{
+  position: fixed;
+  background-color: #c69191;
+  color: rgb(117, 19, 51);
+  size: 50%;
+  right:0;
+  top:0;
+}
+
+.mostrarclassificacoes{
+  background-color:rgb(236, 183, 205);
+  color: rgb(117, 19, 51);
+  border:none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  line-height: 2.8;
+  cursor: pointer;
+}
+
+.formclassificacoes{
+  color: rgb(117, 19, 51);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.modojogo{
+  color: rgb(117, 19, 51);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+table#tabelaresultados {
+  background-color: rgb(236, 183, 205);
+  color: rgb(117, 19, 51);
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  line-height: 2.4;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+table#tabelaresultados th, table#tabelaresultados td {
+  border: 1px solid rgb(117, 19, 51);
+  padding: 3px;
+  text-align: center;
+}

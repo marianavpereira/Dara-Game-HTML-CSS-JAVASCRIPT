@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset=UTF-8>
+    <title>Dara game</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="js/funcoes.js"></script>
+    <script src="js/http.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="header-logotipo">
+            <img id="logo" src="css/20230628_142709-removebg-preview.png" alt="foto aqui" width="150">
+        </div>
+
+        <div class="header-text">
+            <h1>Jogo do Dara</h1>
+        </div>
+
+        <div class="header-login">
+            <forms>
+                <label for="uname">Nome de Utilizador:</label><br>
+                <input type="text" id="uname" placeholder="Inserir Nome" name="uname" style="width:55%" required>
+
+                <br>
+
+                <label for="psw">Palavra Passe:</label><br>
+                <input type="password" id="psw" placeholder="Inserir Palavra Passe" name="psw" style="width:55%"
+                    required>
+                <button type="submit" onclick="login()">Login</button>
+            </forms>
+
+            <div id="loginmessage">
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <form action="action_page.php" method="post">
+
+
+
+
+    </form>
+
+    <main>
+        <div id="formgrande">
+
+            <form class="formulario" name="inicio">
+
+
+                <label for="jogadores">Número de jogadores (1 ou 2):</label>
+                <select name="tabuleiro" id="jogadores">
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+
+                <br>
+
+                <label for="tamanhotabuleiro">Tamanho do tabuleiro:</label>
+                <select name="tabuleiro" id="tamanhotabuleiro">
+                    <option value="5">5x6</option>
+                    <option value="6">6x6</option>
+                </select>
+
+                <br>
+
+                <label for="primeiracor">Que cor joga primeiro?</label>
+                <select name="cor" id="primeiracor">
+                    <option value="1">Rosa</option>
+                    <option value="2">Branco</option>
+                </select>
+
+                <br>
+
+                <label for="niveldificuldade">Nivel dificuldade da IA:</label>
+                <input type="range" name="dificuldade" min="0" max="2" id="niveldificuldade">
+
+
+            </form>
+
+
+        </div>
+
+
+
+        <div class="mae" id="mae"> <!--Inserir aqui o tabuleiro-->
+
+            <div class="tabuleiro">
+                <div class="jogo">
+                    <div id="board"></div>
+                </div>
+            </div>
+
+            <div id="comandos" class="comandos">
+
+                <button id="mostrarPainel" class="mostrarinstrucoes" onclick="abrir(event)">Instruções</button>
+                <div id="painel" class="painel">
+                    <button id="fecharPainel" type="button" class="fecharPainel" onclick="fechar()"> X </button>
+
+                    <h1 class="tituloregras"> REGRAS DO JOGO DO DARA </h1>
+                    <ul>
+                        <li>O <em>Dara</em> joga-se num tabuleiro de dimensões <strong>6X5 </strong> ou <strong> 5X5
+                            </strong>. </li>
+                        <li>Cada jogador tem <strong>12</strong> peças que estão visíveis durante todo o jogo, no
+                            tabuleiro
+                            ou fora.</li>
+                        <li> Um jogador joga com peças rosas e outro com as peças brancas e as peças são agrupadas de
+                            cada
+                            lado, por cores quando estão fora do tabuleiro.</li>
+                        <li>Os jogadores decidem a cor das suas peças e o jogador a começar.</li>
+                        <li>Os jogadores, à vez, põe uma peça numa casa livre, sendo proibido não colocar mais de 3
+                            peças em
+                            linha.</li>
+                        <li>São consideradas em linha as sequências de 3 ou mais peças (da mesma cor) contíguas na
+                            horizontal ou vertical (não na diagonal).</li>
+                        <li>Uma peça apenas pode ser movida na horizontal ou verticam e para uma casa contígua.</li>
+                        <li>Quando um jogador obtem uma linha de tamanho 3 pode capturar uma peça do adversário à sua
+                            escolha.</li>
+                        <li>Não podem ser formadas linhas com mais de 3 peças e a peça não pode voltar à posição da
+                            jogada
+                            anterior.</li>
+                        <li>Um jogador perde o jogo quando tiver <em>apenas</em> 2 peças no tabuleiro.</li>
+                    </ul>
+                </div>
+
+
+
+                <br>
+                <button id="abrirclassificacoes" class="mostrarclassificacoes" onclick="AbrirPopUp(event)">Classificações</button>
+                    <div class="popuptext" id="myPopup">
+                        <button id="fecharClassificacoes" type="button" class="fecharClassificacoes" onclick="fecharclass()"> X </button>
+                        <form onsubmit="mostrarvalores(event)">
+                            <label for="classificacoes">Tamanho do tabuleiro:</label>
+                            <br>
+                            <select name="tab" class="formclassificacoes" id="classificacoes">
+                                <option value="5">5x6</option>
+                                <option value="6">6x6</option>
+                            </select>
+        
+                            <label for="modojogo"> Modo de Jogo </label>
+                            <br>
+                            <select name="x" class="modojogo" id="modojogo">
+                                <option value="online">Online</option>   
+                                <option value="ai"> AI </option> 
+                            </select>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <div id="resultadosubmit"></div>
+                       
+                    </div>
+
+                <br>
+
+                <button class="comecarjogo" id="comecarjogo" onclick="iniciarJogo()">Começar o jogo</button>
+                <br>
+                <button class="desistirjogo" id="desistirjogo" onclick="desistir()">Desistir do jogo</button>
+                <br>
+                <br>
+                <div>
+                    <span id="msg" style="font-weight: bold; display: none;">Mensagens:</span>
+                    <h3 id="info" style="display: inline;"></h3> <!-- Aqui aparece o texto do estado do jogo -->
+                </div>
+                <div><canvas id="hourglasscanvas" class="hourglasscanvas" width="50" height="50" style="display: none;"></canvas></div>
+
+            </div>
+        </div>
+
+        <div id="estatisticas">
+            <div class="blocos">
+                <div class="estatisticas2">
+                    <div class="imagemesq">
+                        <img src="css/trofeu.png" class="trofeu" alt="trofeu" width="100">
+                    </div>
+                    <div class="textoestatisticas">
+                        <h1 class="gameover"> GAME OVER - <span id="vencedor"></span> WINS </h1>
+                        <h1 class="tituloestatisticas"> ESTATÍSTICAS </h1>
+                        <p>Tempo de jogo: <span id="tempo"></span></p>
+                        <p>Número de peças recolhidas do Jogador 1: <span id="pecasRecolhidas1"></span></p>
+                        <p>Número de peças recolhidas do Jogador 2: <span id="pecasRecolhidas2"></span></p>
+                        <p>Número de movimentos do Jogador 1: <span id="movimentosJogador1"></span></p>
+                        <p>Número de movimentos do Jogador 2: <span id="movimentosJogador2"></span></p>
+
+                        <button id="class" type="button" class="jogarnovamente" onclick="AbrirPopUp()"> Classificações
+                        </button>
+                        <button id="jogarnovamente" type="button" class="jogarnovamente" onclick="jogarnovamente()">
+                            Fechar </button>
+
+                    </div>
+                    <div class="imagemdir">
+                        <img src="css/trofeu.png" class=trofeu alt="trofeu" width="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sitiodaspecas" id="miniboards" style="display: none">
+            <div class="altaflex">
+                <div class="rosas">
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="11">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="12">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="13">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="14">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="15">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="16">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="17">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="18">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="19">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="110">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="111">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p1.png" alt="peçarosa" width="65" id="112">
+                    </div>
+                </div>
+                <div class="brancas">
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="21">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="22">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="23">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="24">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="25">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="26">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="27">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="28">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="29">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="210">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="211">
+                    </div>
+                    <div class="pecas">
+                        <img src="css/p2.png" alt="peçabranca" width="65" id="212">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="joinmessages"></div>
+
+    </main>
+
+
+
+</body>
+<script src="js/loading.js"></script>
+
+</html>
